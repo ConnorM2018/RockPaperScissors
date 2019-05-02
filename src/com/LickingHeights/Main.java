@@ -5,21 +5,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        mainGame();
+    }
+    public static void mainGame(){
         int input;
 
 
         Scanner keyboard;
         keyboard = new Scanner(System.in);
 
-	System.out.println("Welcome to my game of Rock Paper Scissors.");
-	System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
-	input=keyboard.nextInt();
-	System.out.println("You chose "+choiceSpeaker(input)+"!");
-	victoryChooser(input);
-
-
+        System.out.println("Welcome to my game of Rock Paper Scissors.");
+        System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
+        input=keyboard.nextInt();
+        System.out.println("You chose "+choiceSpeaker(input)+"!");
+        victoryChooser(input);
     }
-
 
     public static void victoryChooser(int input){
 
@@ -34,21 +34,29 @@ public class Main {
             case 1:
                 switch(choice){
                     case 1:
-
+                        System.out.println();
                     case 2:
+                        System.out.println();
                     case 3:
+                        System.out.println();
                 }
             case 2:
                 switch(choice){
                     case 1:
+                        System.out.println();
                     case 2:
+                        System.out.println();
                     case 3:
+                        System.out.println();
                 }
             case 3:
                 switch(choice){
                     case 1:
+                        System.out.println();
                     case 2:
+                        System.out.println();
                     case 3:
+                        System.out.println();
                 }
 
         }
