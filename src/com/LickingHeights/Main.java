@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         int input;
-        boolean victory;
 
 
         Scanner keyboard;
@@ -16,13 +15,13 @@ public class Main {
 	System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
 	input=keyboard.nextInt();
 	System.out.println("You chose "+choiceSpeaker(input)+"!");
-	victory=victoryChooser(input);
+	victoryChooser(input);
 
 
     }
 
 
-    public static boolean victoryChooser(int input){
+    public static void victoryChooser(int input){
 
         int choice;
         choice=(int)(Math.random()*100);
@@ -35,6 +34,7 @@ public class Main {
             case 1:
                 switch(choice){
                     case 1:
+
                     case 2:
                     case 3:
                 }
@@ -64,5 +64,6 @@ public class Main {
             case 3:
                 return "Scissors";
         }
+        return "no";
     }
 }
