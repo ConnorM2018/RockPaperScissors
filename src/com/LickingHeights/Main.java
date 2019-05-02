@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Welcome to my game of Rock Paper Scissors.");
         System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
         input=keyboard.nextInt();
-        System.out.println("_______________________");
+        System.out.println("_________________________");
         System.out.println("You chose "+choiceSpeaker(input)+"!");
         victoryChooser(input);
     }
@@ -30,7 +30,7 @@ public class Main {
             choice=(int)(Math.random()*100);
         }
         System.out.println("I choose "+choiceSpeaker(choice)+"!");
-        System.out.println("_______________________");
+        System.out.println("_________________________");
 
         switch(input){
             case 1:
@@ -87,6 +87,6 @@ public class Main {
             case 3:
                 return "Scissors";
         }
-        return "Deathpacito";
+        return "to doom us all";
     }
 }
