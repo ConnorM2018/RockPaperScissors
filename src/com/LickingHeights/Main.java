@@ -28,38 +28,51 @@ public class Main {
         while(choice>3||choice==0){
             choice=(int)(Math.random()*100);
         }
-        System.out.println("I choose "+choice+"!");
+        System.out.println("I choose "+choiceSpeaker(choice)+"!");
 
         switch(input){
             case 1:
                 switch(choice){
                     case 1:
-                        System.out.println();
+                        System.out.println("It's a tie!");
+                        break;
                     case 2:
-                        System.out.println();
+                        System.out.println("You lose!");
+                        break;
                     case 3:
-                        System.out.println();
+                        System.out.println("You win!");
+                        break;
                 }
+                break;
             case 2:
                 switch(choice){
                     case 1:
-                        System.out.println();
+                        System.out.println("You win!");
+                        break;
                     case 2:
-                        System.out.println();
+                        System.out.println("It's a tie!");
+                        break;
                     case 3:
-                        System.out.println();
+                        System.out.println("You lose!");
+                        break;
                 }
+                break;
             case 3:
                 switch(choice){
                     case 1:
-                        System.out.println();
+                        System.out.println("You lose!");
+                        break;
                     case 2:
-                        System.out.println();
+                        System.out.println("You win!");
+                        break;
                     case 3:
-                        System.out.println();
+                        System.out.println("It's a tie!");
+                        break;
                 }
+                break;
 
         }
+        mainGame();
 
 
     }
@@ -72,6 +85,6 @@ public class Main {
             case 3:
                 return "Scissors";
         }
-        return "no";
+        return "Deathpacito";
     }
 }
