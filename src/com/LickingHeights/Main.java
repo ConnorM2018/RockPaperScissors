@@ -23,7 +23,7 @@ public class Main {
         
         
         if(input>3||input<1){
-            invalidInput(input);
+            invalidInput();
         }
         
         System.out.println("_________________________");
@@ -98,18 +98,10 @@ public class Main {
         }
         return "[ERROR]";
     }
-    public static void invalidInput(int input){
-        
-        //I got bored
-        if(input==666){
-            System.out.println("Congrats, you have summoned Ctuluhu.");
-        }
-        
-        
-        
-        else{
-            System.out.println("That is not a valid response. Please try again.");
-        }
+    public static void invalidInput(){
+
+        System.out.println("That is not a valid response. Please try again.");
+
         mainGame();
     }
 }
