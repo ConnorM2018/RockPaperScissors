@@ -4,46 +4,68 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
+
+
+
         System.out.println("Welcome to my game of Rock Paper Scissors.");
         mainGame();
     }
     
     
     public static void mainGame(){
-        int input;
+
+
+        int [] choices = new int[2];
 
 
         Scanner keyboard;
         keyboard = new Scanner(System.in);
-        
-        
+
         System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
-        input=keyboard.nextInt();
-        
-        
-        if(input>3||input<1){
+        choices[1]=keyboard.nextInt();
+
+        if(choices[1]>3||choices[1]<1){
             invalidInput();
         }
         
         System.out.println("_________________________");
-        System.out.println("You chose "+choiceSpeaker(input)+"!");
-        winOrLose(input);
+        System.out.println("You chose "+choiceSpeaker(choices[1])+"!");
+
+        winOrLose(choices[1]);
+
+
+
+
     }
 
+
+
+
+
+
+
     public static void winOrLose(int input){
+
 
         int choice;
         choice=(int)(Math.random()*100);
         while(choice>3||choice==0){
             choice=(int)(Math.random()*100);
         }
+
+
         System.out.println("I choose "+choiceSpeaker(choice)+"!");
         System.out.println(" ");
 
+
         switch(input){
+
             case 1:
+
                 switch(choice){
+
                     case 1:
                         System.out.println("It's a tie!");
                         break;
@@ -55,8 +77,10 @@ public class Main {
                         break;
                 }
                 break;
+
             case 2:
                 switch(choice){
+
                     case 1:
                         System.out.println("You win!");
                         break;
@@ -68,8 +92,10 @@ public class Main {
                         break;
                 }
                 break;
+
             case 3:
                 switch(choice){
+
                     case 1:
                         System.out.println("You lose!");
                         break;
@@ -83,12 +109,16 @@ public class Main {
                 break;
         }
         System.out.println("_________________________");
+
         mainGame();
 
 
     }
+
     public static String choiceSpeaker(int input){
+
         switch(input){
+
             case 1:
                 return "Rock";
             case 2:
@@ -98,10 +128,13 @@ public class Main {
         }
         return "[ERROR]";
     }
+
     public static void invalidInput(){
 
-        System.out.println("That is not a valid response. Please try again.");
 
+        System.out.println("-----------------------------------------------");
+        System.out.println("That is not a valid response. Please try again.");
+        System.out.println("-----------------------------------------------");
         mainGame();
     }
 }
