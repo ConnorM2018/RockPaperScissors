@@ -24,16 +24,25 @@ public class Main {
         keyboard = new Scanner(System.in);
 
         System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
-        choices[1]=keyboard.nextInt();
+        choices[0]=keyboard.nextInt();
 
-        if(choices[1]>3||choices[1]<1){
+        if(choices[0]>3||choices[0]<1){
             invalidInput();
         }
         
         System.out.println("_________________________");
         System.out.println("You chose "+choiceSpeaker(choices[1])+"!");
 
-        winOrLose(choices[1]);
+        choices[1]=(int)(Math.random()*100);
+        while(choices[1]>3||choices[1]==0){
+            choices[1]=(int)(Math.random()*100);
+        }
+
+
+        System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
+        System.out.println(" ");
+
+        winOrLose(choices[0], choices[1]);
 
 
 
@@ -46,16 +55,8 @@ public class Main {
 
 
 
-    public static void winOrLose(int input){
-
-
-        int choice;
-        choice=(int)(Math.random()*100);
-        while(choice>3||choice==0){
-            choice=(int)(Math.random()*100);
-        }
-
-
+    public static void winOrLose(int input, int choice){
+        
         System.out.println("I choose "+choiceSpeaker(choice)+"!");
         System.out.println(" ");
 
