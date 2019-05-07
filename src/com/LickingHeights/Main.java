@@ -57,10 +57,7 @@ public class Main {
     }
 
     public static String winOrLose(int input, int input2){
-
-        System.out.println("I choose "+choiceSpeaker(input2)+"!");
-        System.out.println(" ");
-
+        
         String [] output = new String[3];
         output[0]="You win!";
         output[1]="It's a tie!";
