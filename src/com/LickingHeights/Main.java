@@ -31,7 +31,7 @@ public class Main {
         }
         
         System.out.println("_________________________");
-        System.out.println("You chose "+choiceSpeaker(choices[1])+"!");
+        System.out.println("You chose "+choiceSpeaker(choices[0])+"!");
 
         choices[1]=(int)(Math.random()*100);
         while(choices[1]>3||choices[1]==0){
@@ -42,9 +42,8 @@ public class Main {
         System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
         System.out.println(" ");
 
-        winOrLose(choices[0], choices[1]);
-
-
+        System.out.println(winOrLose(choices[0], choices[1]));
+        System.out.println("_________________________");
 
 
     }
@@ -55,65 +54,59 @@ public class Main {
 
 
 
-    public static void winOrLose(int input, int choice){
-        
-        System.out.println("I choose "+choiceSpeaker(choice)+"!");
+    public static String winOrLose(int input, int input2){
+
+        System.out.println("I choose "+choiceSpeaker(input2)+"!");
         System.out.println(" ");
 
+        String [] output = new String[3];
+        output[0]="You win!";
+        output[1]="It's a tie!";
+        output[2]="You lose!";
 
         switch(input){
 
             case 1:
 
-                switch(choice){
+                switch(input2){
 
                     case 1:
-                        System.out.println("It's a tie!");
-                        break;
+                        return output[1];
                     case 2:
-                        System.out.println("You lose!");
-                        break;
+                        return output[2];
                     case 3:
-                        System.out.println("You win!");
-                        break;
+                        return output[0];
+                    default:
+                        return "Error";
                 }
-                break;
-
             case 2:
-                switch(choice){
+                switch(input2){
 
                     case 1:
-                        System.out.println("You win!");
-                        break;
+                        return output[0];
                     case 2:
-                        System.out.println("It's a tie!");
-                        break;
+                        return output[1];
                     case 3:
-                        System.out.println("You lose!");
-                        break;
+                        return output[2];
+                    default:
+                        return "Error";
                 }
-                break;
 
             case 3:
-                switch(choice){
+                switch(input2){
 
                     case 1:
-                        System.out.println("You lose!");
-                        break;
+                        return output[2];
                     case 2:
-                        System.out.println("You win!");
-                        break;
+                        return output[0];
                     case 3:
-                        System.out.println("It's a tie!");
-                        break;
+                        return output[1];
+                    default:
+                        return "Error";
                 }
-                break;
+            default:
+                return "Error";
         }
-        System.out.println("_________________________");
-
-        mainGame();
-
-
     }
 
     public static String choiceSpeaker(int input){
