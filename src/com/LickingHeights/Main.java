@@ -26,12 +26,18 @@ public class Main {
         System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
         choices[0]=keyboard.nextInt();
 
-        if(choices[0]>3||choices[0]<1){
-            invalidInput();
+
+        while(choices[0]>3||choices[0]<1){
+            System.out.println("Invalid input. Please try again.");
+            System.out.println(" ");
+            System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
+            choices[0]=keyboard.nextInt();
         }
-        
+
+
         System.out.println("_________________________");
         System.out.println("You chose "+choiceSpeaker(choices[0])+"!");
+
 
         choices[1]=(int)(Math.random()*100);
         while(choices[1]>3||choices[1]==0){
@@ -41,6 +47,7 @@ public class Main {
 
         System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
         System.out.println(" ");
+
 
         System.out.println(winOrLose(choices[0], choices[1]));
         System.out.println("_________________________");
@@ -121,14 +128,5 @@ public class Main {
                 return "Scissors";
         }
         return "[ERROR]";
-    }
-
-    public static void invalidInput(){
-
-
-        System.out.println("-----------------------------------------------");
-        System.out.println("That is not a valid response. Please try again.");
-        System.out.println("-----------------------------------------------");
-        mainGame();
     }
 }
