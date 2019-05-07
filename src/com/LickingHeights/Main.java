@@ -6,60 +6,55 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
-
-        System.out.println("Welcome to my game of Rock Paper Scissors.");
-        mainGame();
-    }
-    
-    
-    public static void mainGame(){
-
-
-        int [] choices = new int[2];
-
-
         Scanner keyboard;
         keyboard = new Scanner(System.in);
+        boolean playAgain=true;
 
-        System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
-        choices[0]=keyboard.nextInt();
+        System.out.println("Welcome to my game of Rock Paper Scissors.");
 
 
-        while(choices[0]>3||choices[0]<1){
-            System.out.println("Invalid input. Please try again.");
-            System.out.println(" ");
+
+
+        while(playAgain){
+            int [] choices = new int[2];
+
+
             System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
             choices[0]=keyboard.nextInt();
-        }
 
 
-        System.out.println("_________________________");
-        System.out.println("You chose "+choiceSpeaker(choices[0])+"!");
+            while(choices[0]>3||choices[0]<1){
+                System.out.println("Invalid input. Please try again.");
+                System.out.println(" ");
+                System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
+                choices[0]=keyboard.nextInt();
+            }
 
 
-        choices[1]=(int)(Math.random()*100);
-        while(choices[1]>3||choices[1]==0){
+            System.out.println("_________________________");
+            System.out.println("You chose "+choiceSpeaker(choices[0])+"!");
+
+
             choices[1]=(int)(Math.random()*100);
+            while(choices[1]>3||choices[1]==0){
+                choices[1]=(int)(Math.random()*100);
+            }
+
+
+            System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
+            System.out.println(" ");
+
+
+            System.out.println(winOrLose(choices[0], choices[1]));
+            System.out.println("_________________________");
+
+            System.out.println("Do you want to play again?");
+            playAgain=playAgain(keyboard);
+
         }
-
-
-        System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
-        System.out.println(" ");
-
-
-        System.out.println(winOrLose(choices[0], choices[1]));
-        System.out.println("_________________________");
 
 
     }
-
-
-
-
-
-
 
     public static String winOrLose(int input, int input2){
 
@@ -128,5 +123,11 @@ public class Main {
                 return "Scissors";
         }
         return "[ERROR]";
+    }
+    public static boolean playAgain(Scanner keyboard){
+        System.out.println("Yes = [1]");
+        System.out.println("No = [2]");
+        int input = keyboard.nextInt();
+        return (input==1);
     }
 }
