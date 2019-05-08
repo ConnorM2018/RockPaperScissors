@@ -16,11 +16,13 @@ public class Main {
 
 
         while(playAgain){
+            // This array has two items in its list, those being "choices[0]" and "choices[1]"
             int [] choices = new int[2];
 
 
             System.out.println("Do you choose Rock [1], Paper [2], or Scissors [3]?");
             choices[0]=keyboard.nextInt();
+            // choices[0] = User's choice
 
 
             while(choices[0]>3||choices[0]<1){
@@ -39,7 +41,7 @@ public class Main {
             while(choices[1]>3||choices[1]==0){
                 choices[1]=(int)(Math.random()*100);
             }
-
+            // choices[1] = Computer's choice
 
             System.out.println("I choose "+choiceSpeaker(choices[1])+"!");
             System.out.println(" ");
@@ -63,42 +65,43 @@ public class Main {
         output[1]="It's a tie!";
         output[2]="You lose!";
 
+        //"input" is basically "choices[0]" while "input2" is basically "choices[1]"
         switch(input){
 
-            case 1:
+            case 1: //User chooses Rock
 
                 switch(input2){
 
-                    case 1:
+                    case 1: //Computer chooses Rock
                         return output[1];
-                    case 2:
+                    case 2: //Computer chooses Paper
                         return output[2];
-                    case 3:
+                    case 3: //Computer chooses Scissors
                         return output[0];
                     default:
                         return "Error";
                 }
-            case 2:
+            case 2: //User chooses Paper
                 switch(input2){
 
-                    case 1:
+                    case 1: //Computer chooses Rock
                         return output[0];
-                    case 2:
+                    case 2: //Computer chooses Paper
                         return output[1];
-                    case 3:
+                    case 3: //Computer chooses Scissors
                         return output[2];
                     default:
                         return "Error";
                 }
 
-            case 3:
+            case 3: //User chooses Scissors
                 switch(input2){
 
-                    case 1:
+                    case 1: //Computer chooses Rock
                         return output[2];
-                    case 2:
+                    case 2: //Computer chooses Paper
                         return output[0];
-                    case 3:
+                    case 3: //Computer chooses Scissors
                         return output[1];
                     default:
                         return "Error";
